@@ -69,7 +69,9 @@ class _MyAppState extends State<MyApp> {
           title: Text('Fetch Data From mApi'),
         ),
         body: Center(
-          child: FutureBuilder<List<Album>>(
+
+
+          child:SafeArea(child:  FutureBuilder<List<Album>>(
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
@@ -86,7 +88,8 @@ class _MyAppState extends State<MyApp> {
               return CircularProgressIndicator();
             },
           ),
-        ),
+       left: true, ),
+      ),
       ),
     );
   }
