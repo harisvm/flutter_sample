@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutterapp/main.dart';
 
 class AlbumList extends StatelessWidget {
@@ -13,37 +15,53 @@ class AlbumList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          mainAxisSpacing: 2,
-          crossAxisSpacing: 2,
-          childAspectRatio: .6),
+          crossAxisCount: 1,
+          mainAxisSpacing: 8,
+          childAspectRatio: 2),
       itemCount: albumList.length,
       itemBuilder: (context, index) {
         return StatefulBuilder(
-          builder: (context, setState) => GestureDetector(
-              onTap: () {
-                setState((){
-                  selected = !selected;
-                });
-              },
-              child: AnimatedContainer(
-                  width: selected ? 200.0 : 100.0,
-                  height: selected ? 100.0 : 200.0,
-                  alignment: selected
-                      ? Alignment.center
-                      : AlignmentDirectional.topCenter,
-                  duration: Duration(seconds: 2),
-                  curve: Curves.fastOutSlowIn,
-                  color: selected
-                      ? Colors
-                          .primaries[Random().nextInt(Colors.primaries.length)]
-                      : Colors
-                          .primaries[Random().nextInt(Colors.primaries.length)],
-                  child: Text(
-                    albumList[index].title,
-                    style: TextStyle(color: Colors.white),
-                  ))),
-        );
+            builder: (context, setState) => GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selected = !selected;
+                    });
+                  },
+              
+                  child: Card(
+
+                    child: Row(children: <Widget>[
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: FadeInImage.assetNetwork(
+                            placeholder: 'assets/loading.png',
+                            image: albumList[index].url,fit: BoxFit.cover,
+                          )),
+                      Column(
+                        children: <Widget>[
+                          
+
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(5, 20, 10, 5),
+                            child: Text(
+                              'Item',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(5, 0, 10, 5),
+                              child: Text(
+                                'Description',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 15),
+                              ))
+                        ],
+                      ),
+                    ]),
+                  ),
+                ));
       },
     );
 

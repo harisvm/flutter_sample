@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 Future<List<Album>> fetchAlbum() async {
   final response =
-  await http.get('https://jsonplaceholder.typicode.com/albums');
+  await http.get('https://picsum.photos/v2/list');
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -24,17 +24,17 @@ Future<List<Album>> fetchAlbum() async {
 }
 
 class Album {
-  final int userId;
-  final int id;
-  final String title;
+  final String author;
+  final String id;
+  final String url;
 
-  Album({this.userId, this.id, this.title});
+  Album({this.author, this.id, this.url});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      userId: json['userId'],
+      author: json['author'],
       id: json['id'],
-      title: json['title'],
+      url: json['download_url'],
     );
   }
 }
