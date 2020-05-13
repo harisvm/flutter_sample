@@ -8,7 +8,7 @@ import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Containers/C
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Screens/LauncherScreen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'Models/Album.dart';
+import '../Models/Album.dart';
 
 void main() => runApp(MyApp());
 

@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/main.dart';
+import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Containers/main.dart';
 
 import '../Models/Album.dart';
 
+// ignore: must_be_immutable
 class AlbumList extends StatelessWidget {
   final List<Album> albumList;
   bool selected = false;
@@ -26,6 +27,7 @@ class AlbumList extends StatelessWidget {
         return StatefulBuilder(
             builder: (context, setState) => GestureDetector(
                   onTap: () {
+                    print(albumList[index].author);
                     setState(() {
                       selected = !selected;
                     });

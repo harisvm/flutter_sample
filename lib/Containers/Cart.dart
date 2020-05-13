@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/Screens/CartScreen.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Lists/AlbumList.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Screens/LauncherScreen.dart';
 
@@ -25,9 +26,9 @@ class _CartState extends State<Cart> {
     return MaterialApp(
       title: 'Cart',
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Cart Description'),
-          ),
+        body: CartScreen(),
     ));
+
+
   }
 }
