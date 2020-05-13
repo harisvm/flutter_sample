@@ -24,11 +24,9 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cart',
-      home: Scaffold(
-        body: CartScreen(),
-    ));
-
-
+        title: 'Cart',
+        home: Scaffold(
+          body: CartScreen(),
+        ));
   }
 }
