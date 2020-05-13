@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutterapp/main.dart';
+import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/main.dart';
+
+import '../Models/Album.dart';
 
 class AlbumList extends StatelessWidget {
   final List<Album> albumList;
@@ -43,6 +45,7 @@ class AlbumList extends StatelessWidget {
                               fit: BoxFit.cover,
                             )),
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.fromLTRB(5, 20, 10, 5),
@@ -61,10 +64,7 @@ class AlbumList extends StatelessWidget {
                                       fontSize: 15),
                                 )),
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(0
-
-
-                                  , 0, 10, 5),
+                              padding: const EdgeInsets.fromLTRB(0, 0, 10, 5),
                               child: IconTheme(
                                   data: IconThemeData(color: Colors.red),
                                   child: Icon(Icons.star)),
