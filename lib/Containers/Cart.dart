@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/Screens/AddressScreen.dart';
 import 'package:flutterapp/Screens/CartScreen.dart';
+import 'Address.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Lists/AlbumList.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Screens/LauncherScreen.dart';
 
@@ -23,10 +25,8 @@ class _CartState extends State<Cart> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Cart',
-        home: Scaffold(
-          body: CartScreen(),
-        ));
+    return Scaffold(
+      body: CartScreen(),
+    );
   }
 }

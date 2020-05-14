@@ -3,6 +3,8 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/Containers/Address.dart';
+import 'package:flutterapp/Screens/CartScreen.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Lists/AlbumList.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Containers/Cart.dart';
 import 'file:///C:/Users/user/AndroidStudioProjects/flutter_app/lib/Screens/LauncherScreen.dart';
@@ -29,6 +31,8 @@ class _MyAppState extends State<MyApp> {
           // When navigating to the "/" route, build the FirstScreen widget.
           // When navigating to the "/second" route, build the SecondScreen widget.
           '/second': (BuildContext context) => Cart(),
+          '/address': (BuildContext context) => Address(),
+          '/cart': (BuildContext context) => CartScreen(),
         },
         theme: ThemeData(
           primarySwatch: Colors.green,

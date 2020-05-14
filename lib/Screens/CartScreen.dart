@@ -3,20 +3,38 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/ApiOperations/FetchPhotos.dart';
 import 'package:flutterapp/Lists/AlbumList.dart';
+import 'package:flutterapp/Models/AddressModel.dart';
 import 'package:flutterapp/Models/Album.dart';
 
 class CartScreen extends StatefulWidget {
+  final AddressModel addressModel;
+  final String address;
+
+  const CartScreen({Key key, this.addressModel, this.address})
+      : super(key: key);
+
   @override
   _CartScreenState createState() => _CartScreenState();
 }
 
 class _CartScreenState extends State<CartScreen> {
   Future<List<Album>> futureAlbum;
+  CartScreen cartScreen;
 
   @override
   void initState() {
     futureAlbum = FetchPhotos().fetchAlbum();
+
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    cartScreen = ModalRoute.of(context).settings.arguments ?? CartScreen();
+
+    print('cartScreen.addressModel--------');
+    print(cartScreen.addressModel);
+    super.didChangeDependencies();
   }
 
   @override
@@ -59,25 +77,27 @@ class _CartScreenState extends State<CartScreen> {
             left: true,
           ),
           SizedBox(
-            height: 150,
+            height: 250,
             width: MediaQuery.of(context).size.width,
             child: Card(
-              color: Colors.greenAccent,
+              color: Colors.white70,
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.fromLTRB(150, 10, 10, 0),
-                      child: Text(
-                        'Address',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                      padding: EdgeInsets.fromLTRB(50, 10, 10, 0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          cartScreen?.addressModel.toString() ?? '',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
                       ),
                     ),
                     FlatButton(
-                      onPressed:(){
-
-                        
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/address');
                       },
                       child: Align(
                         alignment: Alignment.topRight,
