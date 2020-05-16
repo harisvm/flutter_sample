@@ -28,16 +28,31 @@ class _LauncherScreenState extends State<LauncherScreen> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
+            icon: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/launcher');
+              },
+              icon: new Icon(
+                Icons.home,
+              ),
+            ),
             title: Text("Home"),
-            backgroundColor: Colors.blueAccent),
+            backgroundColor: Color(0xff01A0C7)),
         BottomNavigationBarItem(
-            icon: new Icon(Icons.settings), title: Text("Profile")),
+            icon: IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+                icon: new Icon(Icons.settings)),
+            title: Text("Profile")),
         BottomNavigationBarItem(
-            icon: new Icon(Icons.search), title: Text("Search"))
+            icon: IconButton(
+              icon: new Icon(Icons.history),
+              onPressed: () {},
+            ),
+            title: Text("Order History"))
       ]),
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
         title: Text('Groceries'),
         actions: <Widget>[
           IconButton(
@@ -74,4 +89,3 @@ class _LauncherScreenState extends State<LauncherScreen> {
     );
   }
 }
-

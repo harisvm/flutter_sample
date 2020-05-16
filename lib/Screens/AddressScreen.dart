@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Containers/Cart.dart';
 import 'package:flutterapp/CustomWidgets/ButtonCustom.dart';
+import 'package:flutterapp/CustomWidgets/CustomButton.dart';
 import 'package:flutterapp/CustomWidgets/TextFieldCustom.dart';
 import 'package:flutterapp/Models/AddressModel.dart';
 import 'package:flutterapp/Screens/CartScreen.dart';
@@ -42,8 +43,10 @@ class _AddressState extends State<AddressScreen> {
         controller: pincode,
         hint: 'Pincode',
       ),
-      ButtonCustom(
-        buttonText: 'Save',
+      CustomButton(
+        text: 'Save',color: Color(0xff01A0C7)
+        ,
+        width: 150,
         onPressed: () {
           print(addressLine2.text);
           AddressModel addressModel = AddressModel(addressLine1.text,
@@ -52,7 +55,7 @@ class _AddressState extends State<AddressScreen> {
               addressLine2.text.toString().isNotEmpty &&
               city.text.toString().isNotEmpty &&
               pincode.text.toString().isNotEmpty) {
-            Navigator.pushNamed(context, '/cart',
+            Navigator.pushNamed(context, '/second',
                 arguments: CartScreen(
                   addressModel: addressModel,
                 ));

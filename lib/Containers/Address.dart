@@ -12,7 +12,6 @@ class _AddressState extends State<Address> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Address'),
-        backgroundColor: Colors.blue,
       ),
       body: AddressScreen(),
     );
