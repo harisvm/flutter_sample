@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/CustomWidgets/CustomButton.dart';
 import 'package:flutterapp/CustomWidgets/LoginEmailField.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -29,28 +30,19 @@ class _RegisterState extends State<RegisterScreen> {
                   ),
                 ),
                 SizedBox(height: 45.0),
-                LoginEmailField(hint: 'Email'),
+                LoginEmailField(hint: 'Email',isFieldVisible: true,),
                 SizedBox(height: 25.0),
-                LoginEmailField(hint: 'Password'),
+                LoginEmailField(hint: 'Password',isFieldVisible: false,),
                 SizedBox(
                   height: 35.0,
                 ),
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(30.0),
-                  color: Color(0xff01A0C7),
-                  child: MaterialButton(
-                    minWidth: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/launcher');
-                    },
-                    child: Text("Create Account ",
-                        textAlign: TextAlign.center,
-                        style: style.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                  ),
-                ),
+              CustomButton(
+                text: 'Create Account',
+                color: Color(0xff01A0C7),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/launcher');
+                },
+              ),
                 FlatButton(
                   child: Text(
                     'Already have an  Account ?',

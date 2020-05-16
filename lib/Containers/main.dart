@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Containers/Address.dart';
+import 'package:flutterapp/Containers/OrderHistory.dart';
 import 'package:flutterapp/Screens/CartScreen.dart';
 import 'package:flutterapp/Screens/ProfileScreen.dart';
 import 'Login.dart';
@@ -36,6 +37,7 @@ class _MyAppState extends State<MyApp> {
           '/login': (BuildContext context) => Login(),
           '/register': (BuildContext context) => Register(),
           '/profile': (BuildContext context) => Profile(),
+          '/order': (BuildContext context) => OrderHistory(),
 
         },
         theme: ThemeData(

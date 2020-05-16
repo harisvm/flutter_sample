@@ -48,7 +48,11 @@ class _LauncherScreenState extends State<LauncherScreen> {
         BottomNavigationBarItem(
             icon: IconButton(
               icon: new Icon(Icons.history),
-              onPressed: () {},
+              onPressed: () {
+
+                Navigator.pushNamed(context, '/order');
+
+              },
             ),
             title: Text("Order History"))
       ]),

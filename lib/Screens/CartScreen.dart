@@ -170,7 +170,7 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
         CustomButton(
-          text: 'Place Order',
+          text: 'Place Order',color: Color(0xff01A0C7),
           onPressed: () {
             Navigator.pushNamed(context, '/login');
           },
