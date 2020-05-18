@@ -16,8 +16,7 @@ class AlbumList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('albumList-----');
-    print(albumList);
+
     return ListView.builder(
       shrinkWrap: true,
       itemCount: albumList?.data?.length,
