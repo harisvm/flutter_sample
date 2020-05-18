@@ -9,7 +9,7 @@ class OrderHistoryScreen extends StatefulWidget {
 }
 
 class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
-  Future<List<Album>> futureAlbum;
+  Future<Welcome> futureAlbum;
 
   @override
   void initState() {
@@ -21,13 +21,15 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   Widget build(BuildContext context) {
     return Container(
       child: SafeArea(
-        child: FutureBuilder<List<Album>>(
+        child: FutureBuilder<Welcome>(
           future: futureAlbum,
           builder: (context, snapshot) {
             print(snapshot.data);
             if (snapshot.hasData) {
               return snapshot.hasData
-                  ? AlbumList(albumList: snapshot.data.sublist(0, 1))
+                  ? AlbumList(albumList: snapshot.data)
+
+
                   : Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");

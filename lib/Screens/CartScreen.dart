@@ -21,7 +21,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  Future<List<Album>> futureAlbum;
+  Future<Welcome> futureAlbum;
   CartScreen cartScreen;
 
   @override
@@ -45,13 +45,13 @@ class _CartScreenState extends State<CartScreen> {
     return SingleChildScrollView(
       child: Column(children: <Widget>[
         SafeArea(
-          child: FutureBuilder<List<Album>>(
+          child: FutureBuilder<Welcome>(
             future: futureAlbum,
             builder: (context, snapshot) {
               print(snapshot.data);
               if (snapshot.hasData) {
                 return snapshot.hasData
-                    ? AlbumList(albumList: snapshot.data.sublist(0, 2))
+                    ? AlbumList(albumList: snapshot.data)
                     : Center(child: CircularProgressIndicator());
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");

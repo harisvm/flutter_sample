@@ -15,11 +15,14 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  Future<List<Album>> futureAlbum;
+  // Future<List<Album>> futureAlbum;
+  Welcome futureAlbum=Welcome();
 
   @override
   void initState() {
-    futureAlbum = FetchPhotos().fetchAlbum();
+     FetchPhotos().fetchAlbum().then((value) {
+       futureAlbum =value;
+    });
 
     super.initState();
   }
@@ -27,8 +30,7 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-      AppBar(
+      appBar: AppBar(
         title: Text('Cart'),
         actions: <Widget>[
           IconButton(
@@ -44,7 +46,6 @@ class _CartState extends State<Cart> {
               onPressed: () {})
         ],
       ),
-
       body: CartScreen(),
     );
   }

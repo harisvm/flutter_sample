@@ -1,6 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/Containers/Address.dart';
+import 'package:flutterapp/Containers/FirstPage.dart';
+
 import 'package:flutterapp/Containers/OrderHistory.dart';
 import 'package:flutterapp/Screens/CartScreen.dart';
 import 'package:flutterapp/Screens/ProfileScreen.dart';
@@ -20,6 +22,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+//FirstPage _firstPage;
+  Widget defaultLauncher=FirstPage();
+  //Widget defaultLauncher=LauncherScreen();
+  //Widget defaultLauncher=Lau7();
+
+  @override
+  void initState() {
+    //_firstPage = new FirstPage();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,15 +50,15 @@ class _MyAppState extends State<MyApp> {
           '/register': (BuildContext context) => Register(),
           '/profile': (BuildContext context) => Profile(),
           '/order': (BuildContext context) => OrderHistory(),
-
+          '/firstPage': (BuildContext context) => FirstPage(),
         },
         theme: ThemeData(
 //          primaryColor: Colors.amber,
-            primaryColor: Color(0xff01A0C7),
+            primaryColor: Color(0xff00BC9C),
             primarySwatch: Colors.green,
             backgroundColor: Colors.black),
         home: Scaffold(
-          body: LauncherScreen(),
+          body: defaultLauncher,
         ));
   }
 }
