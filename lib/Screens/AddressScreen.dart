@@ -44,7 +44,7 @@ class _AddressState extends State<AddressScreen> {
         hint: 'Pincode',
       ),
       CustomButton(
-        text: 'Save',color: Color(0xff01A0C7)
+        text: 'Save',color: Color(0xff00BC9C)
         ,
         width: 150,
         onPressed: () {

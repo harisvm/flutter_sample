@@ -44,25 +44,25 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: <Widget>[
-        SafeArea(
-          child: FutureBuilder<Welcome>(
-            future: futureAlbum,
-            builder: (context, snapshot) {
-              print(snapshot.data);
-              if (snapshot.hasData) {
-                return snapshot.hasData
-                    ? AlbumList(albumList: snapshot.data)
-                    : Center(child: CircularProgressIndicator());
-              } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
-              }
-
-              // By default, show a loading spinner.
-              return CircularProgressIndicator();
-            },
-          ),
-          left: true,
-        ),
+//        SafeArea(
+//          child: FutureBuilder<Welcome>(
+//            future: futureAlbum,
+//            builder: (context, snapshot) {
+//              print(snapshot.data);
+//              if (snapshot.hasData) {
+//                return snapshot.hasData
+//                    ? AlbumList(albumList: snapshot.data)
+//                    : Center(child: CircularProgressIndicator());
+//              } else if (snapshot.hasError) {
+//                return Text("${snapshot.error}");
+//              }
+//
+//              // By default, show a loading spinner.
+//              return CircularProgressIndicator();
+//            },
+//          ),
+//          left: true,
+//        ),
         SizedBox(
           height: 200,
           width: MediaQuery.of(context).size.width,
@@ -170,7 +170,7 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
         CustomButton(
-          text: 'Place Order',color: Color(0xff01A0C7),
+          text: 'Place Order',color: Color(0xff00BC9C),
           onPressed: () {
             Navigator.pushNamed(context, '/login');
           },

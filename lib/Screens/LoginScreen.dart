@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   CustomButton(
                     text: 'Login',
-                    color: Color(0xff01A0C7),
+                    color: Color(0xff00BC9C),
                     width: 200,
                     onPressed: () {
                       Navigator.pushNamed(context, '/launcher');

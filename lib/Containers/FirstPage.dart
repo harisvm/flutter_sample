@@ -14,7 +14,6 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   var currentTabIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -57,6 +56,7 @@ class _FirstPageState extends State<FirstPage> {
 
 // ignore: non_constant_identifier_names
 onTap_(int n, BuildContext context) {
+
   switch (n) {
     case 0:
       //Navigator.pushNamed(context, '/launcher');

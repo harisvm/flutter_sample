@@ -25,14 +25,12 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
           future: futureAlbum,
           builder: (context, snapshot) {
             print(snapshot.data);
-            if (snapshot.hasData && snapshot.data.data.length <= 2) {
+            if (snapshot.hasData ) {
               return snapshot.hasData
                   ? AlbumList(albumList: snapshot.data)
                   : Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
-            } else if (snapshot.data.data.length == 2) {
-              return AlbumList(albumList: snapshot.data);
             }
             // Bye default, show a loading spinner.
 

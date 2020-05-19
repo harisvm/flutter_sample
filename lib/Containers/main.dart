@@ -4,6 +4,7 @@ import 'package:flutterapp/Containers/Address.dart';
 import 'package:flutterapp/Containers/FirstPage.dart';
 
 import 'package:flutterapp/Containers/OrderHistory.dart';
+import 'package:flutterapp/Containers/Splash.dart';
 import 'package:flutterapp/Screens/CartScreen.dart';
 import 'package:flutterapp/Screens/ProfileScreen.dart';
 import 'Login.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 //FirstPage _firstPage;
-  Widget defaultLauncher=FirstPage();
+  Widget defaultLauncher=SplashScreen();
   //Widget defaultLauncher=LauncherScreen();
   //Widget defaultLauncher=Lau7();
 

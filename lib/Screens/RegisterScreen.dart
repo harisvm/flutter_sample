@@ -38,7 +38,7 @@ class _RegisterState extends State<RegisterScreen> {
                 ),
               CustomButton(
                 text: 'Create Account',
-                color: Color(0xff01A0C7),
+                color: Color(0xff00BC9C),
                 onPressed: () {
                   Navigator.pushNamed(context, '/launcher');
                 },
