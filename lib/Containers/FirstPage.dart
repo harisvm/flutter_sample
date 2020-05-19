@@ -5,6 +5,10 @@ import 'package:flutterapp/Containers/Profile.dart';
 import 'package:flutterapp/Containers/main.dart';
 
 import 'package:flutterapp/Screens/LauncherScreen.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_map_location_picker/google_map_location_picker.dart';
+import 'package:google_map_location_picker/generated/i18n.dart'
+    as location_picker;
 
 class FirstPage extends StatefulWidget {
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
@@ -14,19 +18,25 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> {
   var currentTabIndex = 0;
+
+  @override
+  void initState() {
+    getLocation(context);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
           body: currentTabIndex == 0
               ? LauncherScreen()
               : currentTabIndex == 1 ? Profile() : OrderHistory(),
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: currentTabIndex,
-//      onTap: onTap_(current_tab_index, context),
               onTap: (index) {
-                print('index-------');
+                print('--------');
+                print(getLocation);
                 print(index);
                 setState(() {
                   currentTabIndex = index;
@@ -56,7 +66,6 @@ class _FirstPageState extends State<FirstPage> {
 
 // ignore: non_constant_identifier_names
 onTap_(int n, BuildContext context) {
-
   switch (n) {
     case 0:
       //Navigator.pushNamed(context, '/launcher');
@@ -68,4 +77,11 @@ onTap_(int n, BuildContext context) {
       // Navigator.pushNamed(context, '/order');
       break;
   }
+}
+
+Future<LocationResult> getLocation(BuildContext context) async {
+  LocationResult result = await showLocationPicker(
+      context, 'AIzaSyDy4BcDNpntc1fSKH5o9hLwy1Li3GPIOoc');
+
+  return result;
 }
