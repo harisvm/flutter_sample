@@ -6,7 +6,8 @@
          additional functionality it is fine to subclass or reimplement
 
          FlutterApplication and put your custom class here. -->
-
+    <uses-feature android:name="android.hardware.location.network" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"  />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -17,7 +18,9 @@
         android:icon="@mipmap/ic_launcher"
 
         android:label="flutterapp">
-
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAA_mtnF1SDxg5-gsDepQo0a0r2IPLUTpU" />
 
         <activity
             android:name=".MainActivity"
@@ -33,9 +36,7 @@
             <meta-data
                 android:name="io.flutter.embedding.android.NormalTheme"
                 android:resource="@style/NormalTheme" />
-            <meta-data
-                android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyDy4BcDNpntc1fSKH5o9hLwy1Li3GPIOoc" />
+
 
             <!-- Displays an Android View that continues showing the launch screen
                  Drawable until Flutter paints its first frame, then this splash

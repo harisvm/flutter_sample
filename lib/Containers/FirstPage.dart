@@ -21,7 +21,7 @@ class _FirstPageState extends State<FirstPage> {
 
   @override
   void initState() {
-    getLocation(context);
+  //  getLocation(context);
     super.initState();
   }
 
@@ -35,9 +35,7 @@ class _FirstPageState extends State<FirstPage> {
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: currentTabIndex,
               onTap: (index) {
-                print('--------');
-                print(getLocation);
-                print(index);
+
                 setState(() {
                   currentTabIndex = index;
                 });
@@ -79,9 +77,4 @@ onTap_(int n, BuildContext context) {
   }
 }
 
-Future<LocationResult> getLocation(BuildContext context) async {
-  LocationResult result = await showLocationPicker(
-      context, 'AIzaSyDy4BcDNpntc1fSKH5o9hLwy1Li3GPIOoc');
 
-  return result;
-}

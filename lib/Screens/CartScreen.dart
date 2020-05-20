@@ -7,6 +7,7 @@ import 'package:flutterapp/CustomWidgets/CustomButton.dart';
 import 'package:flutterapp/Lists/AlbumList.dart';
 import 'package:flutterapp/Models/AddressModel.dart';
 import 'package:flutterapp/Models/Album.dart';
+import 'package:google_map_location_picker/google_map_location_picker.dart';
 import 'package:solid_bottom_sheet/solid_bottom_sheet.dart';
 
 class CartScreen extends StatefulWidget {
@@ -102,6 +103,14 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                     ),
                   ),
+                  IconButton(
+                      icon: Icon(
+                        Icons.add_location,
+                        color: Colors.red,
+                      ),
+                      onPressed: () {
+                        getLocation(context);
+                      }),
                   Padding(
                     padding: EdgeInsets.fromLTRB(20, 10, 10, 0),
                     child: Text(
@@ -170,7 +179,8 @@ class _CartScreenState extends State<CartScreen> {
           ),
         ),
         CustomButton(
-          text: 'Place Order',color: Color(0xff00BC9C),
+          text: 'Place Order',
+          color: Color(0xff00BC9C),
           onPressed: () {
             Navigator.pushNamed(context, '/login');
           },
@@ -180,4 +190,11 @@ class _CartScreenState extends State<CartScreen> {
       ]),
     );
   }
+}
+
+Future<LocationResult> getLocation(BuildContext context) async {
+  LocationResult result = await showLocationPicker(
+      context, 'AIzaSyAA_mtnF1SDxg5-gsDepQo0a0r2IPLUTpU');
+
+  return result;
 }

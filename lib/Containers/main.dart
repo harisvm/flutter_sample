@@ -24,7 +24,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 //FirstPage _firstPage;
-  Widget defaultLauncher=SplashScreen();
+  Widget defaultLauncher = SplashScreen();
+
   //Widget defaultLauncher=LauncherScreen();
   //Widget defaultLauncher=Lau7();
 
@@ -33,6 +34,7 @@ class _MyAppState extends State<MyApp> {
     //_firstPage = new FirstPage();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
