@@ -8,7 +8,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../Models/Album.dart';
 
-// ignore: must_be_immutable
 class AlbumList extends StatelessWidget {
   final Welcome albumList;
   bool selected = false;

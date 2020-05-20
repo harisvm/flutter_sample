@@ -173,9 +173,12 @@ class _CartScreenState extends State<CartScreen> {
                       fontSize: 18,
                       color: Colors.green),
                   textAlign: TextAlign.start,
+
                 ),
               ),
             ]),
+
+
           ),
         ),
         CustomButton(
